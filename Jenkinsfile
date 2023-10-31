@@ -4,6 +4,7 @@ def commitHashForBuild( build ) {
   return scmAction?.revision?.hash
 }
 
+
 pipeline {
     agent any
     options {
