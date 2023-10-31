@@ -8,7 +8,7 @@ pipeline {
             steps {
                 script {
                     //skipDefaultCheckout false
-                    echo currentBuild.getBuildCauses
+                    echo currentBuild.getBuildCauses()
                     echo currentBuild.changeSets
                 }
                 sh("env")
