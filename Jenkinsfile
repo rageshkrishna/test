@@ -1,3 +1,9 @@
+@NonCPS
+def commitHashForBuild( build ) {
+  def scmAction = build?.actions.find { action -> action instanceof jenkins.scm.api.SCMRevisionAction }
+  return scmAction?.revision?.hash
+}
+
 pipeline {
     agent any
     options {
@@ -7,10 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    def commitHashForBuild(build) {
-                      def scmAction = build?.actions.find { action -> action instanceof jenkins.scm.api.SCMRevisionAction }
-                      return scmAction?.revision?.hash
-                    }
+                    
                     def currentCommit = commitHashForBuild(currentBuild.rawBuild)
                     echo "CURRENT COMMIT:"
                     echo currentCommit.toString()
