@@ -9,7 +9,7 @@ pipeline {
                 script {
                     //skipDefaultCheckout false
                     echo currentBuild.getBuildCauses().toString()
-                    echo currentBuild.changeSets
+                    echo currentBuild.changeSets.toString()
                 }
                 sh("env")
                 checkout scmGit(branches: [[name: '**']], extensions: [], userRemoteConfigs: [[refspec: "+${GIT_COMMIT}:refs/remotes/origin/${GIT_BRANCH}", url: 'https://github.com/rageshkrishna/test.git']])
