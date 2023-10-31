@@ -10,9 +10,9 @@ pipeline {
                     //skipDefaultCheckout false
                     echo currentBuild.getBuildCauses().toString()
                     echo "Changesets"
-                    echo currentBuild.changeSets
+                    echo currentBuild.changeSets.toString()
                     echo "Changesets[0]"
-                    echo currentBuild.changeSets[0]
+                    echo currentBuild.changeSets[0].toString()
                     echo "Changesets.getLogs"
                     echo currentBuild.changeSets.getLogs().get(0).toString()
                 }
