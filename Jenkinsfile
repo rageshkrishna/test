@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { label 'meshd' }
     // options {
     //     skipDefaultCheckout true
     // }
